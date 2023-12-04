@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Money</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/global.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/dashboard.css') }}">
+</head>
+
+<body>
+
+    <div class="nav">
+        <div class="nav2">
+            <table>
+                <tr>
+                    <td class="navtd">
+                        <a href="{{ url_for('home') }}">HOME</a>
+                    </td>
+                    <td class="navtd">
+                        <a href="{{ url_for('dashboard') }}">DASHBOARD</a>
+                    </td>
+                    <td class="navtd">
+                        <a href="{{ url_for('logout') }}">LOGOUT</a>
+                    </td>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <br><br><br><br><br><br><br><br>
+
+    <center>
+
+        <div class="dash">
+
+        <h2>You have {{  user.goldBits  }} Gold Bits (INR {{  amount_inr  }})</h2>
+        <br>
+
+         <form method="POST" action="">
+            {{ addFrom.hidden_tag() }}
+            {{ addFrom.amount }}
+             <br><br>
+            {{ addFrom.submit }}
+        </form>
+
+        </div>
+
+    </center>
+</body>
+</html>

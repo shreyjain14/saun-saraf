@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/global.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/dashboard.css') }}">
+</head>
+
+<body>
+
+    <div class="nav">
+        <div class="nav2">
+            <table>
+                <tr>
+                    <td class="navtd">
+                        <a href="{{ url_for('home') }}">HOME</a>
+                    </td>
+                    <td class="navtd">
+                        <a href="{{ url_for('dashboard') }}">DASHBOARD</a>
+                    </td>
+                    <td class="navtd">
+                        <a href="{{ url_for('logout') }}">LOGOUT</a>
+                    </td>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <br><br><br><br><br><br><br><br>
+
+    <center>
+
+        <div class="dash">
+
+            <h1>Welcome {{  user.username  }},</h1>
+            <h2>You have {{  user.goldBits  }} Gold Bits (INR {{  amount_inr  }})</h2>
+
+            <a href="{{url_for('addMoney')}}">
+                <button>
+                    Add Money
+                </button>
+            </a>
+
+            <br><br>
+
+            <a href="{{url_for('subMoney')}}">
+                <button>
+                    Subtract Money
+                </button>
+            </a>
+
+        </div>
+
+    </center>
+
+</body>
+
+</html>
